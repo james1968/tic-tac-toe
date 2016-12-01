@@ -1,7 +1,7 @@
 class Board
   attr_reader :board
 
-  WINNING_LINES = [[1,2,3], [4,5,6], [7,8,9], [1,4,7], [2,5,8], [3,6,9], [1,5,9], [7,5,3]]
+
 
   def initialize(input = {})
     @board = Array.new(10)
@@ -32,7 +32,21 @@ class Board
   def update(position, value)
     @board.insert(position, value)
     display_board
+    if @board == [nil, nil, nil, nil, nil, nil, nil, nil, nil, nil]
+      puts 'Change Player'
+    elsif @board[4..6].uniq.length == 1
+      puts "#{@board[1]} wins"
+    elsif @board[4..6].uniq.length == 1
+      puts "#{@board[4]} wins"
+    elsif @board[7..9].uniq.length == 1
+      puts "#{@board[7]} wins"
+    elsif @board[1,4,7].uniq.length == 1
+      puts "#{@board[7]} wins"
+    elsif @board[2,5,8].uniq.length == 1
+      puts "#{@board[2]} wins"
+    else
     puts 'Change Player'
+    end
   end
 
 end
