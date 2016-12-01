@@ -2,9 +2,12 @@ require 'sinatra/base'
 require 'player'
 
 class Tictactoe < Sinatra::Base
+
   get '/' do
     'Hello Tictactoe!'
   end
+
+  
 
 
 
