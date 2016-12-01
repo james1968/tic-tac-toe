@@ -32,6 +32,7 @@ class Board
   def update(position, value)
     @board.insert(position, value)
     display_board
+    puts 'Change Player'
   end
 
 end
